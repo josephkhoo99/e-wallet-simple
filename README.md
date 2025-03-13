@@ -3,30 +3,44 @@
 This diagram illustrates the high-level architecture of our application, encompassing the frontend, backend, database, and data engineering components.
 
 ```mermaid
-flowchart TD
+flowchart TB
+    User[User]
+
     subgraph "Frontend (Next.js)"
-        A[User Interface] --> B[Authentication]
-        B --> C[Transaction Management]
-        C --> D[Account Management]
-        D --> E[Analytics Dashboard]
+        UI[UI Components]
+        State[State Management]
+        API_Client[API Client]
     end
 
     subgraph "Backend (Spring Boot)"
-        F[REST API] --> G[Security Layer]
-        G --> H[Business Logic]
-        H --> I[Data Access Layer]
+        API[RESTful API]
+        Service[Service Layer]
+        Repository[Repository Layer]
+        Security[Security Layer]
     end
 
     subgraph "Database"
-        J[(PostgreSQL)]
+        SQL[(SQL Database)]
+        Redis[(Redis Cache)]
     end
 
     subgraph "Data Engineering"
-        K[Data Collection] --> L[Data Processing]
-        L --> M[Data Storage]
-        M --> N[Data Analytics]
+        ETL[ETL Processes]
+        Analytics[Analytics Engine]
+        Reporting[Reporting Dashboard]
+        DataLake[(Data Lake)]
     end
 
-    A <--> F
-    I <--> J
-    J <-.-> K
+    User --> UI
+    UI --> State
+    State --> API_Client
+    API_Client --> API
+    API --> Security
+    Security --> Service
+    Service --> Repository
+    Repository --> SQL
+    Service --> Redis
+    SQL --> ETL
+    ETL --> DataLake
+    DataLake --> Analytics
+    Analytics --> Reporting
