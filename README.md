@@ -44,23 +44,23 @@ flowchart TB
     ETL --> DataLake
     DataLake --> Analytics
     Analytics --> Reporting
-
+```
 
 # Backend (Spring Boot)
-i) Complete API for user management, wallet operations, and transactions
-ii) Secure authentication with JWT
-iii) Transaction processing logic for deposits, withdrawals, and transfers
+i) Complete API for user management, wallet operations, and transactions <br>
+ii) Secure authentication with JWT <br>
+iii) Transaction processing logic for deposits, withdrawals, and transfers <br>
 iv) Database models and repositories
 
 # Frontend (Next.js)
-i) User authentication screens (login/register)
-ii) Dashboard with wallet overview and transaction history
-iii) Deposit, withdrawal, and transfer functionality
+i) User authentication screens (login/register) <br> 
+ii) Dashboard with wallet overview and transaction history <br>
+iii) Deposit, withdrawal, and transfer functionality <br>
 iv) Interactive charts for transaction visualization
 
 # Data Engineering Pipeline
-i) Comprehensive data flow from operational database to data warehouse
-ii) Change Data Capture (CDC) for real-time data streaming
-iii) Apache Kafka for event messaging
-iv) Data Lake architecture with landing, processed, and curated zones
+i) Comprehensive data flow from operational database to data warehouse <br>
+ii) Change Data Capture (CDC) for real-time data streaming <br>
+iii) Apache Kafka for event messaging <br>
+iv) Data Lake architecture with landing, processed, and curated zones <br>
 v) ETL processes using Apache
